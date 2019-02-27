@@ -99,4 +99,39 @@
                                                                    create mode 100644 Readme.md
                                                                    
             Se for digitado o git status novamente, voce verá que não tem nada a ser commitado pois não tem modificações para adicionar na branch.
+   
+   6 - Log no git
+    - Com o log do git é possível verificar alterações que foram criadas, e assim conseguir ver o histórico, ver o histórico do commit... Para fazer isso basta digitar --> git log, ele vai mostrar a hash do commit, quem foi  autro , email, data e o commit feito.
+    Temos algumas opç~es pra passar no git log, tipo:
+    --> git log --decorate , que traz informações como de qual branch pra qual branch foi, se teve merge ou não, que task foram geradas 
+    --> git log --autor="Nome", ai ele procura qualquer log que o tenha comom autor este nome digiado.
+    --> git shortlog , que traz um resumo de quais autores fizeram commit, quantos commmits cada um fez em ordem alfabética, e qual cada um fez, e se quiser ver apenas quantos commits cada um fez, basta digitar --> git shortlog -sn
+    --> git log --graph , ele mostra em forma gráfica em como esta meus branchs e merges;
+      dentro do git log temos uma hash, pelo hash conseguimos ver o que aconteceu nesse commit, pra isso:
+         
+         commit:207bgfaa897ertg548errv5d5f4e
+         Merge: 2a2dfcg78er9f
+         Date: Fri Feb 1 00:12:32 2017 -0300
+         
+            Merge pull request #120 from cleiton/master
+            
+            Update Manual.md
+        
+        Você vai copiar apenas o conteúdo deste campo " commit:207bgfaa897ertg548errv5d5f4e" e digitar assim 
+        -->  git show 207bgfaa897ertg548errv5d5f4e  e tecle enter, ela irá mostrar várias informações que estão armazenadas neste hash!
+        
+ 7 - Resetar os arquivos que deseja
+    - digite  --> git checkout    (antes de digitar o git add!!!)
+              assim ele retorna o arquivo para antes da edição.
+              
+              --> git reset HEAD oDocumentoQueQuiserAlterar.AextensaoQueSalvouoDoc
+                ai ele vai resetar as alterações que estivirem naquele cabeçalho , pois você especificou (HEAD), logo em seguida vai
+                aparecer assim abaixo desta linha:
+                          
+                          Unstaged changes after reset:
+                          M     oDocumentoQueQuiserAlterar.AextensaoQueSalvouoDoc
+             
+               
+     
+            
          
