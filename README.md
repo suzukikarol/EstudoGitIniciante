@@ -131,7 +131,82 @@
                           Unstaged changes after reset:
                           M     oDocumentoQueQuiserAlterar.AextensaoQueSalvouoDoc
              
-               
-     
+             --> tem um comando que mostra diferenças no commit, basta estar na branch desejada,  e digitar  --> git diff
+             
+             --> para commitar tudo com apenas uma linha de comando, digite --> git commit -am "mensagem que quiser"
+                o "-am" neste comando quer dizer, comita tudo o que tiver modified com esta mensagem.
+             
+             -->para desfazer o commit você tem 3 comandos diferentes:
+                -- soft : vai pegar as modificações, desfaz o commit, mas o arquivo vai estar pronto para ser comitado novamente,
+                          ficando novamente no estado de staged
+                          
+                -- mixed : defaz o commit também, volta ao estado modified 
+                
+                --hard : ele simplesmente ignora tudo o que foi feito no commit, como se nada estivesse acontecido.
+                
+                Como que faz o reset? basta digitar o comando --> git reset --o estilo de reset que quiser
+                
+             OBS: digamos que você queira voltar ao commit, precisa voltar um antes, ou seja, temos 3 commits, quero voltar ao 2 
+             seleciono o 2, e não o 3.
+             O "git reset" altera o histórico de logs que você já deu push! Então, ele deve ser usado com cuidado, e pode dar muita
+             confusão nos históricos!!!
+             
+8 - Trabalhando com repositório remoto!
+    
+    Neste estudo, será feito usando o GitHub mesmo okay? 
+    
+    Para criar um repositório aqui no GitHub, basta criar uma conta, após isso, note que tem um sinal de + no canto superior direito da tela, lá mesmo terá a opção de "Novo Repositório", clique nela, você será direcionado para a janela onde deverá nomear este repositório, e escolher se quer que ele seja público ou privado, e escolher se quer iniciar já com o Readme.md (que pode ser útil em alguns casos, em outros nem tanto), ao finalizar só clicar em "criar repositório" (ou "create repository"), pronto, seu repositório está criado!
+   
+   Okay, mas como o GitHub sabe quem está fazendo os commits?
+      - Ele usa um protocolo chamado SSH que serve para autenticar usuário remoto ao servidor, é baseado em chaves, sendo uma pública e outra privada, onde enviamos a chave pública pra o GitHub e a nossa máquina abre atrasvés do privado. 
+      Para mais informações e como usar essa ferramente de segurança em seus repositórios, acesse esse link e saiba mais :
+          https://help.github.com/en/articles/connecting-to-github-with-ssh
+          
+
+9 - Primeiros passos no Github
+    Assim que você cria o repositório, ele já te dá alguns primeiros passo, mas se quiser colocar o repositório que já tem, ele te dará 
+    a seguinte opção -- > 
+            git remote add origin git@github.com:pessoacoder/github-course.git
+            -- > E o que isso tudo quer dizer?
+            -- >Ele vai adicionar um repositório remoto ("git remote add")
+              , com o nome origin ("origin") (nome default, pode ser qualquer nome, até banana! rs), 
+               depois passo o endereço do meu repositório do git ("git@github.com:pessoacoder/github-course.git"). 
+            Pronto só dar enter!
             
+            Como saber se realmente esse repositório foi criado?
+            digite no terminal : 
+            git remote   , e dê Enter, ele deverá aparecer algo como assim :
+            origin
+            
+            Se quiser saber o endereço dele, digite --> git remote -v
+            
+            E pro fim, vamos fazer o push! O push envia os arquivos que tenho, todos os logs, tudo o que tenho para o repositório
+            digite :  git push -u origin master  , ou seja ele vem do master e vai para o origin!
+            pronto, só dar enter que ele envia tudo e faz a conexão.
+            
+10 - Enviando as mudanças para o repositório remoto
+          
+          Basicamente é só depois de dar o commit nas mudanças, basta digitar novamente o mesmo comando mencionado acima!
+          Lembrando sempre que você deve digitar, sempre PARA ONDE VAI  e DE ONDE VEM, nesta ordem.
+          Como provavelmente você está seguindo os passos, basta modificar alguma coisa no seu arquivo, ao final, commit (git commit -am "mensagem"), e após terminar de fazer isso digitar --> git push -u origin master  , pronto seu commit já está no seu repositório remoto!
+          
+11- Clonando os repositórios 
+        
+          Para isto tem um comando  -->  git clone e o link que você copiar do repositório no Github
+          
+         O link costuma ficar do lado direito, quando você acessa um repositório, pode reparar que do lado direito, existirá um opção de 
+         clonar repositório, basta escolher se quer só clonar ele, se quer usar o ssh, e clicar em copiar link, pronto!
          
+         Quando você voltar ao terminal, lembre-se de sair primeiro do repositório atual, e depois clonar este okay? Senão pode acabar
+         dando alguns erros e não seria legal certo?
+        
+        E como funciona o clone? Ele literalmente clona tudo o que tem neste repositório para sua máquina! Incrível né? Assim você pode
+        acessar seu repositório indiferente do local que for trabalhar!
+        
+12 - O que é Fork?
+        
+        continue...
+            
+            
+    
+  
