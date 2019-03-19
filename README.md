@@ -204,9 +204,62 @@
         acessar seu repositório indiferente do local que for trabalhar!
         
 12 - O que é Fork?
-        
-        continue...
-            
-            
-    
+   - Fork no git, é como criar uma branch ? Não, pois no fork vc literalmente terá uma cópia de tudo o que tem naquele repositório pra você, assim você poderá contribuir para aquele projeto,mesmo que ele não seja seu, basta apenas ele estar liberado em modo público para que isso seja possivel.
+   Para você forka um projeto, o git tem um "step by step" bem explicativo e ilustrativo, vou deixar o link aqui para caso queiram consultar como fazer ok? --> https://help.github.com/en/articles/fork-a-repo
   
+13 - Branch
+ Acima mencionei sobre criar uma branch certo? Poi bem, imagine que o repositório é uma árvore, as branchs são as ramificações dela, ou seja, quando ela foi criada, ela terá uma "cópia" daquele repositório para que você possa contribuir ,alterar e salvar, sem afetar sua master, seu principal. Mas você deve estar se questionando qual a diferença dela pra fork, é bem clara, o fork é uma copia onde só você pode mexer e contribuir depois que o "dono" da master aceitar; já o branch não, você estará contribuindo indiretamente para o projeto, outros poderão mexer na mesma branch que você sem afetar a master, e no fim, nem precisa manter a branch,pode apagar ela depois de mergiar suas alterações para as master.
+       o comando para cria uma branch é --> git checkout -b NomeDaBranch e enter
+       acessar a branch é --> git checkout NomeDaBranch
+       deletar um branch é --> git checkout -D NomeDaBranch  , uma observação é digitar d maiúsculo mesmo okay?
+       para ver as branchs que existem no repositório é --> git branch
+
+14 - Unir as branchs
+      Bom unir é fazer um merge, okay mas o que é um merge né?
+      Pense no seguinte um repositorio tem um master e esse é uma linha continua, e quando criamos uma branch, fazemos uma linha em parelelo com ela, e cada qual proseguiria seu caminho em sua respectiva linha, e quando vamos unir, fazemos um merge, misturaremos as duas linhas. 
+      tentarei ilustrar aqui como seria isso
+      ---master-----master-------master-----MERGE----master 
+                  |---branch---branch------/
+                  
+      o comando pra isso é, voltar para a master e digitar --> git merge NomeDaBranch
+      lembrando que os commits tem que estão todos ok pra fazerem essa junção!
+      
+      tem outra forma de unir, através do Rebase, porém, isso deixa sua estrutura meio confusa, porem linear, mas para futuras pesquisar pra saber quem fez o que e quando ja não é tão bom.
+      mas vou deixar aqui o comando, segue a ideia do merge e no final digite --> git rebase NomeDaBranch
+     
+15- Criar um gitgnore
+    Ele já vem criado se qusier quando cria um repositório aqui no github, mas pode colocar informações para ele e dizer o que quer que ele ignore.
+    acesse a branch e crie um arquivo de gitgnore, lembra do comando?
+    vamos lá
+    git checkout NomeDaBranch
+    vi gitgnore
+    coloque dentro deste arquivos extensões que quer que ele ignore, e salve, esc + w+ q + enter
+    pronto, está criado o seu.
+    vou deixar links de templates e collections para seguir exemplos caso queira
+    https://github.com/github/gitignore
+    https://git-scm.com/docs/gitignore
+    
+16 - GitStash
+    Ele guarda comits que não foram efetivados numa pasta, para que você possa finalizar ele depois.
+    comando -->  git stash
+    ele volta com o status working
+    e quando quiser aplicar as mudanças armazedas digite --> git stash apply
+    pra saber as stash que tem digite --> git stash list
+    pra apagar suas alterações guardadas --> git stash clear
+    comando muito bom pra quando precisar dar um pull e voltar a fazer depois.
+
+17 - Criar siglas de atalhos para comandos 
+    Seria maravilhoso poder otimizar o tempo digitando em vez de status apenas o s não seria?
+    então vamos ao step by step
+    1 --> git config --global alias.s status
+    aqui estou pedindo pro git criar um atalho global onde s será status
+    2 pra testar só digitar --> git status e ver ele te dando o status de seu repositório.
+    
+18 - Tag
+    Isso mesmo, para cada commit finalizado vocÊ pode colocar tags, pra identificar a versão do seu código, e facilitar pra quem for baixar as releases direto do teu github, como assim? No seu github , na aba repositorio, quando você entra num deles, é possível ver as tags, isso ajuda a identificar mais facilmente a versão que esta ou a modificação feita, alem dele armazenar também informações como quem fez o commit, quando e deixar links pra baixar seu code ali mesmo.
+    o comando pra é , após dar o commit, digite --> git tag -a 1.0 -m "Mensagem que quiser"
+    aqui estou mandando o git, criar a tag com o numero 1.0 (pode ser qlqr número) com a mensagem "Mensagem que quiser"
+    
+    pronto, se você entrar no seu repositório, e entrar na aba tag, vai ver que tem essa tag, clicando nela, voc~e poderá acessar todas aquelas informações que mencionei acima e mais algumas.
+    
+bom esse foi um resumo dos meus estudos, espero que tenha ajudado você de alguma forma.
